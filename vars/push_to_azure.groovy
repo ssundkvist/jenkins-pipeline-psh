@@ -1,4 +1,4 @@
-def call(String username, String password, String name) {
+def call(String name) {
     bat """
         FOR /f %%i IN ('git branch --list azure') DO SET BRANCH_EXISTS=%%i
         IF DEFINED BRANCH_EXISTS (git checkout azure) ELSE (git checkout -b azure)

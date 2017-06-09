@@ -3,5 +3,6 @@ def call(String username, String password, String name) {
         REM FOR /f %%i IN ('git branch --list azure') DO SET BRANCH_EXISTS=%%i
         REM IF DEFINED BRANCH_EXISTS (git checkout azure) ELSE (git checkout -b azure)
         git push -f "https://${username}:${password}@${name}.scm.azurewebsites.net:443/${name}.git" azure
+        no worky!!!!
     """
 }

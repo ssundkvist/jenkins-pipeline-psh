@@ -1,7 +1,7 @@
-def call(String name) {
+def call(String username, String password, String name) {
     bat """
-          git checkout azure
-          git branch azure
-          git push -f "https://%GIT_USERNAME%:%GIT_PASSWORD%@${name}.scm.azurewebsites.net:443/${name}.git" azure
-        """
+        FOR /f %%i IN ('git branch --list azure') DO SET BRANCH_EXISTS=%%i
+        IF DEFINED BRANCH_EXISTS (git checkout azure) ELSE (git checkout -b azure)
+        git push -f "https://${username}:${password}@${name}.scm.azurewebsites.net:443/${name}.git" azure
+    """
 }

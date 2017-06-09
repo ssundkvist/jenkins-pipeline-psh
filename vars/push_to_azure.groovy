@@ -6,5 +6,4 @@ def call(String name) {
           git commit -m 'Updated'
           git push -f "https://%GIT_USERNAME%:%GIT_PASSWORD%@${name}.scm.azurewebsites.net:443/${name}.git" azure
         '''
-    }
 }

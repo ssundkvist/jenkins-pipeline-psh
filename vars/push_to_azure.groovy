@@ -5,6 +5,7 @@ def call(String name) {
           git add .funcpack
           git commit -m 'Updated'
           echo %GIT_USERNAME%
+          echo ${GIT_USERNAME}
           git push -f "https://%GIT_USERNAME%:%GIT_PASSWORD%@${name}.scm.azurewebsites.net:443/${name}.git" azure
         """
 }
